@@ -3,7 +3,8 @@ import 'reflect-metadata'
 import express from 'express'
 import { buildSchema } from "type-graphql"
 import cookieParser from "cookie-parser"
-import { ApolloServer } from "apollo-server"
+import { ApolloServer } from 'apollo-server-express';
+import { resolvers } from "./resolvers"
 dotenv.config()
 
 async function bootstrap() {
@@ -27,12 +28,12 @@ async function bootstrap() {
         ]
     })
     await server.start()
-    server.applyMiddleware({ app })
+    server.applyMiddleware({ app });
     app.listen({port: 4000}, () => {
         console.log('server started on localhost:4000')
     }
     );
-    
+        
 } 
 
 bootstrap()

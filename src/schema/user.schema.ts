@@ -1,6 +1,6 @@
 import { prop } from "@typegoose/typegoose";
-import { Field } from "type-graphql";
-
+import { Field, ObjectType } from "type-graphql";
+@ObjectType()
 export class User {
     @Field(()=> String)
     _id: string;

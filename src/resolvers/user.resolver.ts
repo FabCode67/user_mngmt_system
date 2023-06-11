@@ -1,6 +1,7 @@
-import { Query } from "type-graphql";
+import { Query, Resolver } from "type-graphql";
 import { User } from "../schema/user.schema";
 
+@Resolver()
 export default class  UserResolver {
     @Query(()=> User)
     me(){
